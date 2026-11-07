@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "sereneseasonsfix",
+  "version": "${version}",
+  "name": "Serene Seasons Fix",
+  "description": "Season time commands for Serene Seasons. The 1.21.1 season tick already follows the day clock, so this port does not replace it.",
+  "authors": ["Or_OS", "Serene Seasons Fix contributors"],
+  "contact": {
+    "homepage": "https://github.com/Nergan/serene-seasons-fix-mod",
+    "issues": "https://github.com/Nergan/serene-seasons-fix-mod/issues",
+    "sources": "https://github.com/123oro321/sereneseasonsfix"
+  },
+  "license": "MIT",
+  "icon": "assets/sereneseasonsfix/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.sereneseasonsfix.mod.SereneSeasonsFix"]
+  },
+  "mixins": ["sereneseasonsfix.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=1.13.2+kotlin.2.1.20",
+    "sereneseasons": "*"
+  }
+}

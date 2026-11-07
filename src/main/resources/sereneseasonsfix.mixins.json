@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.sereneseasonsfix.mod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["GetSeasonMixin", "SetSeasonMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
