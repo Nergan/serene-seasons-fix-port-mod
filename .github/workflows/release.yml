@@ -25,6 +25,10 @@ jobs:
           set -euo pipefail
           prop() { grep -E "^$1=" gradle.properties | cut -d= -f2- | tr -d '\r'; }
           echo "mod_version=$(prop mod_version)" >> "$GITHUB_OUTPUT"
+          echo "serene_seasons_maven=$(prop serene_seasons_maven)" >> "$GITHUB_OUTPUT"
+          echo "glitchcore_maven=$(prop glitchcore_maven)" >> "$GITHUB_OUTPUT"
+          echo "fabric_api_version=$(prop fabric_api_version)" >> "$GITHUB_OUTPUT"
+          echo "fabric_kotlin_version=$(prop fabric_kotlin_version)" >> "$GITHUB_OUTPUT"
 
       - name: Check tag
         if: startsWith(github.ref, 'refs/tags/')
@@ -54,11 +58,18 @@ jobs:
           mkdir -p release-split/minecraft-1.21.1-fabric
           printf '%s\n' "serene seasons fix for minecraft 1.21.1 fabric" > release-split/minecraft-1.21.1-fabric/title.txt
           cat > release-split/minecraft-1.21.1-fabric/body.md <<EOF
-          Minecraft **1.21.1** / Fabric. Put the jar in the \`mods\` folder.
+          Minecraft **1.21.1** / Fabric. Put every jar from this page in the \`mods\` folder.
 
-          Also install Serene Seasons Fabric 1.21.1, GlitchCore, Fabric API and Fabric Language Kotlin. This port does not replace the season tick: Serene Seasons 1.21.1 already follows the day clock. License: MIT.
+          This page includes Serene Seasons Fabric 1.21.1, GlitchCore, Fabric API and Fabric Language Kotlin. NightConfig stays inside GlitchCore. This port does not replace the season tick: Serene Seasons 1.21.1 already follows the day clock. License: MIT.
           EOF
           cp -v "build/libs/sereneseasonsfix-fabric-1.21.1-${ver}.jar" release-split/minecraft-1.21.1-fabric/
+          chmod +x .github/scripts/fetch-season-companions.sh
+          .github/scripts/fetch-season-companions.sh \
+            release-split/minecraft-1.21.1-fabric \
+            "${{ steps.versions.outputs.serene_seasons_maven }}" \
+            "${{ steps.versions.outputs.glitchcore_maven }}" \
+            "${{ steps.versions.outputs.fabric_api_version }}" \
+            "${{ steps.versions.outputs.fabric_kotlin_version }}"
           python3 .github/scripts/publish-split-releases.py release-split
 
       - name: Check Modrinth token

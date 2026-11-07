@@ -13,7 +13,7 @@
 
 `config/sereneseasonsfix-server.toml` содержит `block_blacklisted` (по умолчанию `true`). Настройки `enable_season_time_override` нет: перекрывать больше нечего.
 
-Нужны [Serene Seasons](https://modrinth.com/mod/serene-seasons) Fabric 1.21.1 и его [GlitchCore](https://modrinth.com/mod/glitchcore), Fabric API и Fabric Language Kotlin. Мод ставится на сервер. В одиночной игре его поднимает встроенный сервер.
+Нужны [Serene Seasons](https://modrinth.com/mod/serene-seasons) Fabric 1.21.1 и его [GlitchCore](https://modrinth.com/mod/glitchcore), Fabric API и Fabric Language Kotlin. Страница релиза на GitHub содержит эти jar. Мод ставится на сервер. В одиночной игре его поднимает встроенный сервер.
 
 ## Сборка
 
