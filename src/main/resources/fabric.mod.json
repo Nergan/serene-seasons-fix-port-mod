@@ -6,8 +6,8 @@
   "description": "Season time commands for Serene Seasons. The 1.21.1 season tick already follows the day clock, so this port does not replace it.",
   "authors": ["Or_OS", "Serene Seasons Fix contributors"],
   "contact": {
-    "homepage": "https://github.com/Nergan/serene-seasons-fix-mod",
-    "issues": "https://github.com/Nergan/serene-seasons-fix-mod/issues",
+    "homepage": "https://github.com/Nergan/serene-seasons-fix-port-mod",
+    "issues": "https://github.com/Nergan/serene-seasons-fix-port-mod/issues",
     "sources": "https://github.com/123oro321/sereneseasonsfix"
   },
   "license": "MIT",
