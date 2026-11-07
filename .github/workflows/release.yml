@@ -83,7 +83,7 @@ jobs:
         if: steps.modrinth_token.outputs.present == 'true'
         env:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-        run: python3 .github/scripts/replace-modrinth-versions.py serene-seasons-fix-fabric "${{ steps.versions.outputs.mod_version }}"
+        run: python3 .github/scripts/replace-modrinth-versions.py serene-seasons-fix-fabric --slot "${{ steps.versions.outputs.mod_version }}" fabric 1.21.1
 
       - name: Publish Modrinth
         if: steps.modrinth_token.outputs.present == 'true'
